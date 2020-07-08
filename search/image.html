@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Images</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <style>
+        #otherLinks {
+            height: 30px;
+            padding-right: 15px;
+        }
+        a {
+            float: right;
+            
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 13px;
+            color: rgba(0,0,0,0.87);
+            text-decoration: none;
+            padding-left: 15px;
+            line-height: 24px;
+        }
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+        }
+
+        #searchRegion {
+            /* Position absolute takes it out of the flow, but could create one within a div
+            that is absolute position-ed */
+            display: block; /* Allows display of element like <p> in new line */
+            text-align: center; /* Brings logoRegion, logo-space_search, searchBox, searchButton
+            all to the center of the screen */
+
+            position: absolute;
+            width: 100%; /* Occupies the whole screen width */
+        }
+
+        #logoRegion {
+            padding-top: 109px;
+            height: 250px;
+            margin: auto;
+        }
+
+        .logo {
+            font-family: Futura; /*Google logo is close to Futura but based on Product Sans, copyrighted */
+            font-size: 92px;
+            letter-spacing: -9.5px;
+        }
+
+        #imageLogo {
+            position: relative;
+            font-family: sans-serif;
+            color: #4285f4;
+            left: 113px;
+            bottom: 29px;
+        }
+
+        .form {
+            padding-top: 18px;
+            height: 130px;
+        }
+        #searchBox {
+            display: block;
+            text-align: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;    /* This gives the rounded borders */
+            width: 561px;
+            height: 44px;
+            margin: auto;
+        }
+        #boxContentPadding {
+            display: flex;
+            text-align: center;
+            width: 539px;
+            height: 39px;
+            padding: 5px 8px 0 14px;
+        }
+
+        #searchIcon {
+            float: left;
+            height: 44px;
+        }
+
+        #searchText {
+            /* If .search text-align is active, but the searchbox has flexbox activated, then it is not
+            centered */
+
+            font-size: 16px;
+            font-family: sans-serif;
+            line-height: 34px;
+            border: none;
+            width: 500px;
+            padding-left: 15px;
+
+            
+        }
+        #searchText:focus{
+            outline-width: 0px;
+        }
+        .searchButton {
+            color: #5F6368;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+
+            background-color: #f2f2f2;
+            border: 1px solid #f2f2f2;
+            border-radius: 4px;
+            margin: 11px 4px; /* Margin is in order of top/bottom and right/left */
+            padding: 0 16px; /* Same as above. Note margin is outside padding inside */
+
+            height: 36px;
+        }
+
+
+    </style>
+    <body>
+        <div id="otherLinks">
+            <div>
+                <a href="index.html">Search</a>
+            </div>
+            <div>
+                <a href="advance.html">Advanced Search</a>
+            </div>
+        </div>
+
+       
+        <div id="searchRegion">
+            <div id="logoRegion">
+                <div>
+                    <!-- This is for the Google Logo -->
+                    <!-- Use span to style each character individually -->
+                    <span class="logo" style="color: #4285f4">G</span>
+                    <span class="logo" style="color: #DB4437">o</span>
+                    <span class="logo" style="color: #f4b400">o</span>
+                    <span class="logo" style="color: #4285f4">g</span>
+                    <span class="logo" style="color: #0f9d58">l</span>
+                    <span class="logo" style="color: #DB4437">e</span>
+                </div>
+                <div id="imageLogo">
+                    <!-- This is for the Images logo-->
+                    Images
+                </div>
+                
+            </div>
+            <form class="form" action="https://www.google.com/search">
+                <div id="searchBox">
+                    <div id="boxContentPadding">
+                        <div id="searchIcon">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>
+                        </div>
+                        <!-- Input type hidden necessary to give tbm input to pass as GET parameter -->
+                        <input type="hidden" name="tbm" value="isch">
+                        <input id="searchText" type="text" name="q" placeholder="Search Google or type a URL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Google or type a URL'">
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        
+    </body>
+</html>

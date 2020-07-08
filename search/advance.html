@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Advanced Search</title>
+    </head>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            margin: 0;
+        }
+        #logoHeader {
+            height: 60px;
+            background-color: #f1f1f1;
+        }
+        #logoRegion {
+            /* Mistake --> float: left; float, absolutely positioned elements, or root elements are "out-of-flow" so 
+            position itself on top of anything ignoring flow. UNLESS like logoHeader
+            there is a div element as its parent which is display: block; */
+            float: left;
+            width:200px;
+            height: 33px;
+            margin: auto;
+        }
+        .logo {
+            font-family: Futura; /*Google logo is close to Futura but based on Product Sans, copyrighted */
+            font-size: 33px;
+            letter-spacing: -6px;
+        }
+
+        #ASHeader {
+            margin: 25px 35px 25px 45px;
+            font-size: 20px;
+            color:#d93025
+        }
+        #divider {
+            width: 100%;
+            border: 1px solid #ebebeb
+        }
+
+        #tableBorder {
+            margin-top: 40px;
+            margin-left: 45px;
+        }
+        tr {
+            height: 42px;
+        }
+        #instructionHeader {
+            width: 167px;
+            font-size: 16px;
+            color: #333;
+        }
+        #exampleHeader {
+            font-size: 13px;
+            font-weight: 700;
+            color: #777;
+        }
+        .searchTypes {
+            width: 167px;
+            font-size: 13px;
+            color: #222;
+        }
+        .searchBox {    /* This marks the outside cell size of the input field */
+            width: 512.16px;
+        }
+        .textEntry {    /* This marks the input field border */
+            width: 496.156px;
+            height: 25px;
+            padding: 1px 8px;
+            border:1px solid rgb(217, 217, 217);
+            border-top: 1px solid #c0c0c0;
+        }
+        .smallSearchBox {
+            width: 212px;
+            height: 25px;
+            padding: 1px 8px;
+            border:1px solid rgb(217, 217, 217);
+            border-top: 1px solid #c0c0c0;
+        }
+        .instruction {
+            width: 327.766px;
+            height: 30px;
+            padding: 0 0 0 5px;
+            margin-left: 10.234px;
+            margin-bottom: 8px;
+            font-size: 11px;
+            color: #555;
+        }
+        .example {
+            font-family: monospace;
+            font-size: 11px;
+            color: #666;
+        }
+        #toMargin {
+            display: inline-block;
+            width: 33px;
+            height: 29px;
+            padding: 0px 6px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div id="logoHeader">
+            <div id="logoRegion">
+                <!-- Use span to style each character individually -->
+                <span class="logo" style="color: #4285f4">G</span>
+                <span class="logo" style="color: #DB4437">o</span>
+                <span class="logo" style="color: #f4b400">o</span>
+                <span class="logo" style="color: #4285f4">g</span>
+                <span class="logo" style="color: #0f9d58">l</span>
+                <span class="logo" style="color: #DB4437">e</span>
+            </div>
+        </div>
+
+        <div id="ASHeader">Advanced Search</div>
+
+        <div id="divider"></div>
+
+        <table id="tableBorder">
+            <tbody>
+                <tr>
+                    <td id="instructionHeader">Find pages with...</td>
+                    <td></td>
+                    <td id="exampleHeader">To do this in the search box</td>    
+                </tr>
+                <tr>
+                    <td class="searchTypes">all these words:</td>
+                    <td class="searchBox">
+                        <input class="textEntry" type="text">
+                    </td>
+                    <td class="instruction">Type the important words: <span class="example">&nbsptricolor rat terrier</span></td>
+                </tr>
+                <tr>
+                    <td class="searchTypes">this exact word or phrase:</td>
+                    <td class="searchBox">
+                        <input class="textEntry" type="text">
+                    </td>
+                    <td class="instruction">Put exact words in quotes: <span class="example">&nbsp"rat terrier"</span></td>
+                </tr>
+                <tr>
+                    <td class="searchTypes">any of these words:</td>
+                    <td class="searchBox">
+                        <input class="textEntry" type="text">
+                    </td>
+                    <td class="instruction">Type <span class="example">OR</span> between all the words you want: 
+                        <br>
+                        <span class="example">&nbspminiature OR standard</span>
+                    </td>
+                <tr>
+                    <td class="searchTypes">none of these words:</td>
+                    <td class="searchBox">
+                        <input class="textEntry" type="text">
+                    </td>
+                    <td class="instruction">Put a minus sign just before words you don't want:
+                        <br>
+                        <span class="example">&nbsp-rodent, -"Jack Russell"</span></td>
+                </tr>
+                    <td class="searchTypes">numbers ranging from:</td>
+                    <td class="searchBox">
+                        <!-- To not overlap and layout horizontally, may need float? -->
+                        <input class="smallSearchBox" type="text"> 
+                        <div id="toMargin">to</div>
+                        <input class="smallSearchBox"type="text">
+                    </td>
+                    <td class="instruction">Put 2 periods between the numbers and add a unit of measure:
+                        <span class="example">10..35 lb, $300..$500, 2010..2011</span>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </body>
+</html>
